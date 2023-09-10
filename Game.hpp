@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "Window.hpp"
 #include "Player.hpp"
-#include <string>
+#include "World.hpp"
 
 class Game
 {
@@ -11,6 +11,7 @@ class Game
 	sf::Clock _clock;
 
 	Player _player;
+	World _world;
 
 public:
 	Game();

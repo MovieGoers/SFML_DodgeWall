@@ -21,6 +21,7 @@ void Game::Update() {
 	_window.Update(); 
 	// 게임 내 요소 업데이트 및 이벤트 관리.
 	_player.Update(_elapsed.asSeconds());	
+	_world.Update(_elapsed.asSeconds());
 }
 
 void Game::Render() {
@@ -29,6 +30,7 @@ void Game::Render() {
 	
 	// _window.Draw(something);
 	_window.Draw(_player.GetSprite());
+	_world.Draw(&GetWindow()->GetWindow());
 	_window.EndDraw();		// DIsplay
 }
 
