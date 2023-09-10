@@ -25,5 +25,7 @@ public:
 	sf::Sprite& GetSprite();
 
 	sf::Vector2f GetPosition();
+
+	void SetPosition(sf::Vector2f position);
 };
 

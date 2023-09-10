@@ -38,3 +38,7 @@ void Player::Stop() {
 sf::Vector2f Player::GetPosition() {
 	return _position;
 }
+
+void Player::SetPosition(sf::Vector2f position) {
+	_position = position;
+}

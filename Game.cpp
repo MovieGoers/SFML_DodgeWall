@@ -30,6 +30,11 @@ void Game::Update() {
 	// 게임 내 요소 업데이트 및 이벤트 관리.
 	_player.Update(_elapsed.asSeconds());	
 	_world.Update(_elapsed.asSeconds());
+
+	if (_coll.CheckRectOverlap(_player.GetSprite(), _world.GetWalls())) {
+		_world.Setup();
+		_player.SetPosition(sf::Vector2f(WINDOW_WIDTH / 2, WINDOW_HEIGHT - 100));
+	}
 }
 
 void Game::Render() {

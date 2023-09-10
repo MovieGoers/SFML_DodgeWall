@@ -3,6 +3,7 @@
 #include "Window.hpp"
 #include "Player.hpp"
 #include "World.hpp"
+#include "Collision.hpp"
 
 class Game
 {
@@ -12,6 +13,7 @@ class Game
 
 	Player _player;
 	World _world;
+	Collision _coll;
 
 	float wallTimeAccumulater;
 

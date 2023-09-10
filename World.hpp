@@ -22,7 +22,10 @@ public:
 	void MakeWall();
 	float GetWallSpawnTime();
 
+	void Setup();
 	void Update(float dt);
 	void Draw(sf::RenderWindow *window);
+
+	std::vector<sf::RectangleShape> GetWalls();
 };
 
