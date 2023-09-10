@@ -1,7 +1,10 @@
 #include "Game.hpp"
+#include "config.hpp"
 
-Game::Game() : _window("Game", sf::Vector2u(800, 600)) {
+Game::Game() : _window("Game", sf::Vector2u(WINDOW_WIDTH, WINDOW_HEIGHT)) {
 	// 게임 요소 세팅
+	_window.GetEventManager()->AddCallback("Player_move_left", &Game::MovePlayerLeft, this);
+	_window.GetEventManager()->AddCallback("Player_move_right", &Game::MovePlayerRight, this);
 }
 
 Game::~Game() {
@@ -15,6 +18,7 @@ void Game::HandleInput() {
 void Game::Update() {
 	_window.Update(); 
 	// 게임 내 요소 업데이트 및 이벤트 관리.
+	_player.Update(_elapsed.asSeconds());	
 }
 
 void Game::Render() {
@@ -22,7 +26,7 @@ void Game::Render() {
 	_window.BeginDraw();	// Clear
 	
 	// _window.Draw(something);
-
+	_window.Draw(_player.GetSprite());
 	_window.EndDraw();		// DIsplay
 }
 
@@ -36,4 +40,12 @@ sf::Time Game::GetElapsed() {
 
 void Game::RestartTime() {
 	_elapsed = _clock.restart();
+}
+
+void Game::MovePlayerLeft(EventDetails* details) {
+	_player.MoveLeft();
+}
+
+void Game::MovePlayerRight(EventDetails* details) {
+	_player.MoveRight();
 }

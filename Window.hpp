@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "EventManager.hpp"
+#include "Player.hpp"
 
 class Window {
 	sf::RenderWindow _window;
