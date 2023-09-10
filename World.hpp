@@ -15,6 +15,7 @@ public:
 	~World();
 
 	void MakeWall();
+	float GetWallSpawnTime();
 
 	void Update(float dt);
 	void Draw(sf::RenderWindow *window);

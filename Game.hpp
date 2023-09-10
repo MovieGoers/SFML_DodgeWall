@@ -13,6 +13,8 @@ class Game
 	Player _player;
 	World _world;
 
+	float wallTimeAccumulater;
+
 public:
 	Game();
 	~Game();

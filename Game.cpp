@@ -7,6 +7,8 @@ Game::Game() : _window("Game", sf::Vector2u(WINDOW_WIDTH, WINDOW_HEIGHT)) {
 	_window.GetEventManager()->AddCallback("Player_move_right", &Game::MovePlayerRight, this);
 	_window.GetEventManager()->AddCallback("Player_stop_left", &Game::StopPlayerLeft, this);
 	_window.GetEventManager()->AddCallback("Player_stop_right", &Game::StopPlayerRight, this);
+
+	wallTimeAccumulater = 0.f;
 }
 
 Game::~Game() {
@@ -18,6 +20,12 @@ void Game::HandleInput() {
 }
 
 void Game::Update() {
+	wallTimeAccumulater += _elapsed.asSeconds();
+	if (wallTimeAccumulater > _world.GetWallSpawnTime()) {
+		wallTimeAccumulater = 0;
+		_world.MakeWall();
+	}
+
 	_window.Update(); 
 	// 게임 내 요소 업데이트 및 이벤트 관리.
 	_player.Update(_elapsed.asSeconds());	

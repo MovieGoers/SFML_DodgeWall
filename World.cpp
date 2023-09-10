@@ -31,3 +31,7 @@ void World::Draw(sf::RenderWindow* window) {
 		window->draw(_walls[i]);
 	}
 }
+
+float World::GetWallSpawnTime() {
+	return _wallSpawnTime;
+}
