@@ -16,7 +16,7 @@ Player::~Player() {
 }
 
 void Player::Update(float dt) {
-	_position += _speed * _velocity * dt;
+	//_position += _speed * _velocity * dt;
 	_sprite.setPosition(_position);
 }
 

@@ -7,6 +7,7 @@ Game::Game() : _window("Game", sf::Vector2u(WINDOW_WIDTH, WINDOW_HEIGHT)) {
 	_window.GetEventManager()->AddCallback("Player_move_right", &Game::MovePlayerRight, this);
 	_window.GetEventManager()->AddCallback("Player_stop_left", &Game::StopPlayerLeft, this);
 	_window.GetEventManager()->AddCallback("Player_stop_right", &Game::StopPlayerRight, this);
+	_window.GetEventManager()->AddCallback("ClickLMB", &Game::GetClickedMousePosition, this);
 
 	wallTimeAccumulater = 0.f;
 }
@@ -80,4 +81,10 @@ void Game::StopPlayerLeft(EventDetails* details) {
 
 void Game::StopPlayerRight(EventDetails* details) {
 	_player.Stop();
+}
+
+void Game::GetClickedMousePosition(EventDetails* details) {
+	int x = _window.GetEventManager()->GetMousePos(&_window.GetWindow()).x;
+	if( WORLD_BOUNDARY_LEFT <= x && x <= WORLD_BOUNDARY_RIGHT)
+		_player.SetPosition(sf::Vector2f(_window.GetEventManager()->GetMousePos(&_window.GetWindow()).x, WINDOW_HEIGHT - 100.f));
 }

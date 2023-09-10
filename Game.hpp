@@ -34,4 +34,6 @@ public:
 	void MovePlayerRight(EventDetails* details);
 	void StopPlayerLeft(EventDetails* details);
 	void StopPlayerRight(EventDetails* details);
+
+	void GetClickedMousePosition(EventDetails* details);
 };
