@@ -34,3 +34,7 @@ void Player::MoveRight(){
 void Player::Stop() {
 	_velocity.x = 0;
 }
+
+sf::Vector2f Player::GetPosition() {
+	return _position;
+}

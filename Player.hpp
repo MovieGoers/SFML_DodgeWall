@@ -23,5 +23,7 @@ public:
 
 	void Update(float dt);
 	sf::Sprite& GetSprite();
+
+	sf::Vector2f GetPosition();
 };
 

@@ -4,3 +4,6 @@
 #define PLAYER_TEXTURE_FILEPATH "player_texture.png"
 #define PLAYER_SCALE 2.f
 #define PLAYER_SPEED 500.f
+
+#define WORLD_BOUNDARY_LEFT 200
+#define WORLD_BOUNDARY_RIGHT 1000

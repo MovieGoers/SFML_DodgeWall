@@ -45,11 +45,17 @@ void Game::RestartTime() {
 }
 
 void Game::MovePlayerLeft(EventDetails* details) {
-	_player.MoveLeft();
+	if (_player.GetPosition().x >= WORLD_BOUNDARY_LEFT)
+		_player.MoveLeft();
+	else
+		_player.Stop();
 }
 
 void Game::MovePlayerRight(EventDetails* details) {
-	_player.MoveRight();
+	if(_player.GetPosition().x <= WORLD_BOUNDARY_RIGHT)
+		_player.MoveRight();
+	else
+		_player.Stop();
 }
 
 void Game::StopPlayerLeft(EventDetails* details) {
