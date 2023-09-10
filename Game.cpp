@@ -5,6 +5,8 @@ Game::Game() : _window("Game", sf::Vector2u(WINDOW_WIDTH, WINDOW_HEIGHT)) {
 	// 게임 요소 세팅
 	_window.GetEventManager()->AddCallback("Player_move_left", &Game::MovePlayerLeft, this);
 	_window.GetEventManager()->AddCallback("Player_move_right", &Game::MovePlayerRight, this);
+	_window.GetEventManager()->AddCallback("Player_stop_left", &Game::StopPlayerLeft, this);
+	_window.GetEventManager()->AddCallback("Player_stop_right", &Game::StopPlayerRight, this);
 }
 
 Game::~Game() {
@@ -48,4 +50,12 @@ void Game::MovePlayerLeft(EventDetails* details) {
 
 void Game::MovePlayerRight(EventDetails* details) {
 	_player.MoveRight();
+}
+
+void Game::StopPlayerLeft(EventDetails* details) {
+	_player.Stop();
+}
+
+void Game::StopPlayerRight(EventDetails* details) {
+	_player.Stop();
 }

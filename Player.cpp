@@ -6,7 +6,8 @@ Player::Player() {
 	}
 	_speed = PLAYER_SPEED;
 	_sprite.setTexture(_texture);
-	_sprite.setScale(sf::Vector2f(2.f, 2.f));
+	_sprite.setScale(sf::Vector2f(PLAYER_SCALE, PLAYER_SCALE));
+	_sprite.setOrigin(_sprite.getLocalBounds().width / 2, _sprite.getLocalBounds().width / 2);
 	_position = sf::Vector2f(WINDOW_WIDTH / 2, WINDOW_HEIGHT - 100);
 }
 
@@ -28,4 +29,8 @@ void Player::MoveLeft(){
 }
 void Player::MoveRight(){
 	_velocity.x = +1;
+}
+
+void Player::Stop() {
+	_velocity.x = 0;
 }

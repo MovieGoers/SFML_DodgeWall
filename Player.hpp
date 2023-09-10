@@ -19,6 +19,7 @@ public:
 
 	void MoveLeft();
 	void MoveRight();
+	void Stop();
 
 	void Update(float dt);
 	sf::Sprite& GetSprite();

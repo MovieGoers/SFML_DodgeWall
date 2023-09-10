@@ -27,4 +27,6 @@ public:
 
 	void MovePlayerLeft(EventDetails* details);
 	void MovePlayerRight(EventDetails* details);
+	void StopPlayerLeft(EventDetails* details);
+	void StopPlayerRight(EventDetails* details);
 };
