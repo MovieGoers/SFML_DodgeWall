@@ -27,6 +27,12 @@
     <ClCompile Include="Window.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventManager.hpp">
@@ -38,5 +44,17 @@
     <ClInclude Include="Window.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="World.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="config.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="keys.cfg" />
   </ItemGroup>
 </Project>
