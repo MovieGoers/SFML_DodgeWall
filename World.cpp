@@ -24,8 +24,8 @@ void World::Update(float dt) {
 			_walls.erase(_walls.begin());
 			_score++;
 			_scoreText.setString(std::to_string(_score));
-			_wallSpeed += 10.f;
-			_wallSpawnTime -= 0.005f;
+			_wallSpeed += WALL_SPEED_INCREMENT;
+			_wallSpawnTime -= WALL_RESPAWN_TIME_DECREMENT;
 		}	
 		else
 			_walls[i].setPosition(tempWallPosition + sf::Vector2f(0, _wallSpeed) * dt);
