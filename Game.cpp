@@ -37,8 +37,9 @@ void Game::Render() {
 	_window.BeginDraw();	// Clear
 	
 	// _window.Draw(something);
-	_window.Draw(_player.GetSprite());
 	_world.Draw(&GetWindow()->GetWindow());
+	_window.Draw(_player.GetSprite());
+
 	_window.EndDraw();		// DIsplay
 }
 

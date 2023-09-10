@@ -9,6 +9,11 @@ class World
 	sf::Vector2f _wallSize;
 	float _wallSpeed;
 	float _wallSpawnTime;
+
+	int _score;
+
+	sf::Font _font;
+	sf::Text _scoreText;
 	
 public:
 	World();

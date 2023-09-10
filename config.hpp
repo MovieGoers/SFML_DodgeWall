@@ -11,3 +11,6 @@
 #define WALL_INITIAL_WIDTH 300.f
 #define WALL_SPEED 400.f
 #define WALL_INITIAL_SPAWN_TIME 1.f
+
+#define SCORE_FONT_FILEPATH "Audiowide-Regular.ttf"
+#define SCORE_TEXT_SIZE 500
